@@ -19,21 +19,22 @@ country_list = one_hot_encoder.categories_[0]
 st.title('Customer Churn Prediction')
 
 # Receiving data from the user
+credit_score = st.number_input('Credit Score')
 geography = st.selectbox('Geography', country_list)
 gender = st.selectbox('Gender', gender_list)
 age = st.slider('Age', 18, 92)
-balance = st.number_input('Balance')
-credit_score = st.number_input('Credit Score')
-estimated_salary = st.number_input('Estimated Salary')
 tenure = st.slider('Tenure', 0, 10)
+balance = st.number_input('Balance')
 num_of_products = st.slider('Number of Products', 1, 4)
 has_cr_card = st.selectbox('Has Credit Card', [0, 1])
 is_active_member = st.selectbox('Is Active Member', [0, 1])
+estimated_salary = st.number_input('Estimated Salary')
+
 
 # Prepare the input data
 input_data = pd.DataFrame({
-    'Geography': [geography],
     'CreditScore': [credit_score],
+    'Geography': [geography],
     'Gender': [gender],
     'Age': [age],
     'Tenure': [tenure],
